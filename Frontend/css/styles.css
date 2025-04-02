@@ -1,21 +1,24 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #4b3c3c;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
 }
 
+/* App Container */
 #app {
-    width: 80%;
+    width: 100%;
     max-width: 600px;
-    background-color: #a89b9b;
+    background-color: #fff;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(221, 172, 172, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
+/* Page Styles */
 .page {
     display: none;
 }
@@ -24,6 +27,7 @@ body {
     display: block;
 }
 
+/* Form Styles */
 form {
     display: flex;
     flex-direction: column;
@@ -33,19 +37,29 @@ input, select, button {
     margin: 10px 0;
     padding: 10px;
     font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button Styles */
 button {
-    background-color: #4e5c51;
-    color: #dfdede;
+    background-color: #28a745;
+    color: #fff;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #56745c;
+    background-color: #218838;
 }
 
+/* Summary Section */
 #summary {
     margin-top: 20px;
 }
@@ -54,15 +68,26 @@ button:hover {
     margin: 5px 0;
 }
 
+/* Transaction List */
+#transactions p {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+/* Chatbot Section */
 #chatbot {
     margin-top: 20px;
 }
 
 #chatbox {
-    border: 1px solid #456363;
+    border: 1px solid #ccc;
     padding: 10px;
     height: 200px;
-    overflow-y: scroll;
+    overflow-y: auto;
+    border-radius: 4px;
+    background-color: #f9f9f9;
 }
 
 #chatbox p {
@@ -71,6 +96,7 @@ button:hover {
 
 #chat-form {
     display: flex;
+    margin-top: 10px;
 }
 
 #chat-input {
@@ -79,6 +105,27 @@ button:hover {
     margin-right: 10px;
 }
 
+/* Chatbot Button */
 #chat-form button {
     padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#chat-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Link Styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
 }

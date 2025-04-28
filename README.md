@@ -87,11 +87,3 @@ expense-tracker/
 3. Add income and expenses using the provided form.
 4. View the summary of income and expenses in the dashboard.
 5. Use the chatbot to ask questions about managing expenses.
-
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

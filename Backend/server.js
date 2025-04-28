@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/auth');
 const transactionRoutes = require('./routes/transactions');
+const chatbotRoutes = require('./routes/chatbot');
 const cors = require("cors");
 
 
@@ -21,5 +22,6 @@ app.use(cors());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/transactions', transactionRoutes);
+app.use('/api/chatbot', chatbotRoutes);
 
 module.exports = app;

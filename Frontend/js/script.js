@@ -166,6 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateSummary() {
         const totalIncomeAmount = transactions.filter(t => t.type === "income").reduce((sum, t) => sum + t.amount, 0);
         const totalExpensesAmount = transactions.filter(t => t.type === "expense").reduce((sum, t) => sum + t.amount, 0);
+        const remainingAmount = totalIncomeAmount - totalExpensesAmount;
+        document.getElementById('remaining-amount').textContent = remainingAmount;
 
         const currentYear = new Date().getFullYear();
         const currentMonth = new Date().getMonth();

@@ -1,25 +1,29 @@
 const express = require('express');
-
 const router = express.Router();
 
 // Predefined responses
 const responses = {
     "hello": "Hi there! How can I help you today?",
-    "how are you": "I'm just a chatbox, but I'm here to help you with your expense tracking!",
-    "help": "Sure! You can ask me about your expenses, income, and more.",
-    "how to save money": "To save money, create a budget, track your expenses, reduce unnecessary spending, and set savings goals.",
-    "how to reduce expenses": "To reduce expenses, cut down on non-essential spending, look for discounts, and negotiate bills where possible.",
-    "how to improve life on money": "To improve your financial well-being, focus on saving, investing wisely, and making informed financial decisions.",
-    "how to increase income": "To increase your income, consider asking for a raise, finding a side job, or investing in skills that can lead to higher-paying opportunities.",
-    "default": "I'm not sure how to respond to that. You can ask me about your expenses, income, and more."
+    "how are you": "I'm just a chatbot, but I'm here to assist you!",
+    "help": "You can ask me about your expenses, income, and financial tips!",
+    "how to save money": "Track your spending, cut unnecessary expenses, and set clear savings goals.",
+    "how to reduce expenses": "Review your subscriptions, plan meals, buy in bulk, and avoid impulse purchases.",
+    "how to improve life on money": "Focus on budgeting, saving, investing, and continuous learning about personal finance.",
+    "how to increase income": "Consider upskilling, freelancing, side hustles, or asking for a raise.",
+    "default": "I'm not sure about that. Try asking me about savings, income, or expenses!"
 };
 
 router.post('/chat', (req, res) => {
     const { message } = req.body;
-    const lowerCaseMessage = message.toLowerCase();
 
-    const response = responses[lowerCaseMessage] || responses["default"];
-    res.json({ message: response });
+    if (!message) {
+        return res.status(400).json({ message: "Message is required." });
+    }
+
+    const lowerCaseMessage = message.toLowerCase().trim();
+    const botReply = responses[lowerCaseMessage] || responses["default"];
+
+    res.json({ message: botReply });
 });
 
 module.exports = router;
